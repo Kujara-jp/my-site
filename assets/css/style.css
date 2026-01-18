@@ -1,0 +1,372 @@
+/* ========================================
+   リセット・ベーススタイル
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* ========================================
+   コンテナ
+   ======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   ナビゲーション
+   ======================================== */
+
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* ========================================
+   ヒーローセクション
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.cta-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   特徴セクション
+   ======================================== */
+
+.features {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.features h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #f9f9f9;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ========================================
+   問い合わせセクション
+   ======================================== */
+
+.contact {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.contact h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contact > .container > p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    background-color: white;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+}
+
+.submit-button:active {
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   フッター
+   ======================================== */
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .features h2 {
+        font-size: 28px;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .container {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        min-height: 50vh;
+    }
+
+    .features {
+        padding: 50px 20px;
+    }
+
+    .contact {
+        padding: 50px 20px;
+    }
+
+    .features-grid {
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+    }
+
+    .feature-icon {
+        font-size: 36px;
+    }
+
+    .feature-card h3 {
+        font-size: 18px;
+    }
+
+    .feature-card p {
+        font-size: 13px;
+    }
+
+    .submit-button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
