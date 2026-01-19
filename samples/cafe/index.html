@@ -274,6 +274,7 @@
           <figure class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80"
               alt="店内の雰囲気"
               loading="lazy"
             />
@@ -282,6 +283,7 @@
           <figure class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=80"
               alt="店内の席"
               loading="lazy"
             />
@@ -290,6 +292,7 @@
           <figure class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80"
               alt="コーヒーのイメージ"
               loading="lazy"
             />
@@ -298,6 +301,7 @@
           <figure class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=1600&q=80"
               alt="コーヒーのサーブ"
               loading="lazy"
             />
@@ -306,6 +310,7 @@
           <figure class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80"
               alt="スイーツのイメージ"
               loading="lazy"
             />
@@ -314,6 +319,7 @@
           <figure class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=1600&q=80"
               alt="焼き菓子の盛り合わせ"
               loading="lazy"
             />
@@ -348,11 +354,27 @@
             </div>
           </div>
         </div>
-        <div class="map-box" aria-hidden="true">
-          <div class="map-placeholder">
-            <span>Map</span>
+        <div class="map-box">
+          <div class="map-embed">
+            <iframe
+              class="map-iframe"
+              title="Googleマップ"
+              src="https://www.google.com/maps?q=Kyoto%20Station&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
           </div>
-          <p class="map-caption">京都駅から徒歩5分 / 近隣にコインパーキングあり</p>
+          <div class="map-meta">
+            <p class="map-caption">京都駅から徒歩5分 / 近隣にコインパーキングあり</p>
+            <a
+              class="map-link"
+              href="https://maps.google.com/"
+              target="_blank"
+              rel="noopener"
+              >Googleマップで開く</a
+            >
+          </div>
         </div>
       </div>
     </section>
@@ -434,6 +456,25 @@
         </div>
       </div>
     </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div
+        class="lightbox-content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="ギャラリーの拡大表示"
+      >
+        <button
+          type="button"
+          class="lightbox-close"
+          data-lightbox-close
+          aria-label="閉じる"
+        >
+          ×
+        </button>
+        <img class="lightbox-image" alt="" />
+      </div>
+    </div>
 
     <script src="../../assets/js/main.js"></script>
     <script>
@@ -575,6 +616,74 @@
           document.addEventListener("DOMContentLoaded", setupForm);
         } else {
           setupForm();
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        const setupLightbox = () => {
+          const gallery = document.querySelector(".gallery-grid");
+          const lightbox = document.getElementById("lightbox");
+          const lightboxImage = lightbox?.querySelector(".lightbox-image");
+          const closeButton = lightbox?.querySelector(".lightbox-close");
+
+          if (!gallery || !lightbox || !lightboxImage) {
+            return;
+          }
+
+          const openLightbox = (image) => {
+            const fullSrc =
+              image.dataset.full || image.currentSrc || image.src || "";
+            lightboxImage.src = fullSrc;
+            lightboxImage.alt = image.alt || "";
+            lightbox.classList.add("is-visible");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-open");
+          };
+
+          const closeLightbox = () => {
+            lightbox.classList.remove("is-visible");
+            lightbox.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("lightbox-open");
+            lightboxImage.removeAttribute("src");
+            lightboxImage.alt = "";
+          };
+
+          gallery.addEventListener("click", (event) => {
+            const item = event.target.closest(".gallery-item");
+            if (!item) {
+              return;
+            }
+
+            const image = item.querySelector("img");
+            if (!image) {
+              return;
+            }
+
+            openLightbox(image);
+          });
+
+          if (closeButton) {
+            closeButton.addEventListener("click", closeLightbox);
+          }
+
+          lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+              closeLightbox();
+            }
+          });
+
+          document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && lightbox.classList.contains("is-visible")) {
+              closeLightbox();
+            }
+          });
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", setupLightbox);
+        } else {
+          setupLightbox();
         }
       })();
     </script>
