@@ -127,7 +127,9 @@
             <ul class="menu-list">
               <li>
                 <div class="menu-item-main">
-                  <span class="menu-name">ドリップコーヒー</span>
+                  <span class="menu-name"
+                    >ドリップコーヒー <span class="menu-badge">人気TOP3</span></span
+                  >
                   <span class="menu-desc">
                     産地別を日替わりで。香りと酸味のバランス。
                   </span>
@@ -159,7 +161,9 @@
             <ul class="menu-list">
               <li>
                 <div class="menu-item-main">
-                  <span class="menu-name">カフェラテ</span>
+                  <span class="menu-name"
+                    >カフェラテ <span class="menu-badge">人気TOP3</span></span
+                  >
                   <span class="menu-desc">
                     ミルクの甘みとコーヒーの調和。
                   </span>
@@ -192,7 +196,10 @@
             <ul class="menu-list">
               <li>
                 <div class="menu-item-main">
-                  <span class="menu-name">ベイクドチーズケーキ</span>
+                  <span class="menu-name"
+                    >ベイクドチーズケーキ
+                    <span class="menu-badge">人気TOP3</span></span
+                  >
                   <span class="menu-desc">
                     しっとり濃厚、コーヒーと相性抜群。
                   </span>
@@ -372,6 +379,9 @@
           </div>
           <button type="submit" class="submit-button">送信する</button>
         </form>
+        <p class="form-error" role="alert" aria-live="assertive" hidden>
+          必須項目（希望日・希望時間・人数）をご入力ください。
+        </p>
         <p class="form-success" role="status" aria-live="polite" hidden>
           送信ありがとうございます。内容を確認し、24時間以内にご返信します。
         </p>
@@ -404,6 +414,13 @@
           </div>
         </div>
         <div class="footer-bottom">
+          <a
+            class="footer-social-link"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener"
+            >Instagram</a
+          >
           <p>&copy; 2026 Cafe KUJARA. All rights reserved.</p>
         </div>
       </div>
@@ -415,10 +432,113 @@
         const setupForm = () => {
           const form = document.getElementById("contactForm");
           const successMessage = document.querySelector(".form-success");
+          const errorMessage = document.querySelector(".form-error");
+          const requiredFields = new Set(["date", "time", "guests"]);
 
           if (!form) {
             return;
           }
+
+          const requiredInputs = Array.from(
+            form.querySelectorAll(
+              'input[name="date"], input[name="time"], input[name="guests"]'
+            )
+          );
+
+          const hideSuccess = () => {
+            if (successMessage) {
+              successMessage.hidden = true;
+            }
+          };
+
+          const showSuccess = () => {
+            if (successMessage) {
+              successMessage.hidden = false;
+            }
+          };
+
+          const hideError = () => {
+            if (errorMessage) {
+              errorMessage.hidden = true;
+            }
+          };
+
+          const showError = () => {
+            if (errorMessage) {
+              errorMessage.hidden = false;
+            }
+          };
+
+          const clearFieldErrors = () => {
+            requiredInputs.forEach((input) => {
+              input.classList.remove("is-error");
+            });
+          };
+
+          const isMissingValue = (input) => {
+            const value = input.value.trim();
+
+            if (input.type === "number") {
+              const count = Number(value);
+              return !value || Number.isNaN(count) || count < 1;
+            }
+
+            return value.length === 0;
+          };
+
+          const updateRequiredState = () => {
+            let hasMissing = false;
+
+            requiredInputs.forEach((input) => {
+              const missing = isMissingValue(input);
+              input.classList.toggle("is-error", missing);
+              if (missing) {
+                hasMissing = true;
+              }
+            });
+
+            return hasMissing;
+          };
+
+          form.addEventListener(
+            "invalid",
+            (event) => {
+              if (!form.contains(event.target)) {
+                return;
+              }
+
+              hideSuccess();
+
+              if (!requiredFields.has(event.target.name)) {
+                return;
+              }
+
+              event.preventDefault();
+
+              const hasMissing = updateRequiredState();
+              if (hasMissing) {
+                showError();
+              }
+            },
+            true
+          );
+
+          form.addEventListener(
+            "input",
+            (event) => {
+              if (!requiredFields.has(event.target.name)) {
+                return;
+              }
+
+              hideSuccess();
+
+              const hasMissing = updateRequiredState();
+              if (!hasMissing) {
+                hideError();
+              }
+            },
+            true
+          );
 
           form.addEventListener(
             "submit",
@@ -426,11 +546,17 @@
               event.preventDefault();
               event.stopImmediatePropagation();
 
-              if (successMessage) {
-                successMessage.hidden = false;
+              const hasMissing = updateRequiredState();
+              if (hasMissing) {
+                hideSuccess();
+                showError();
+                return;
               }
 
+              hideError();
+              showSuccess();
               form.reset();
+              clearFieldErrors();
             },
             true
           );
