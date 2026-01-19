@@ -177,9 +177,11 @@
 
 .cafe-hero-actions {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
   align-items: center;
+  width: 100%;
 }
 
 .cafe-page .cta-button,
@@ -237,6 +239,11 @@
   gap: 24px;
 }
 
+.about-content {
+  display: grid;
+  gap: 24px;
+}
+
 .about-text p + p {
   margin-top: 16px;
 }
@@ -257,6 +264,23 @@
 .concept-card h3 {
   margin-bottom: 8px;
   font-size: 18px;
+}
+
+.about-image {
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--cafe-border);
+  box-shadow: 0 16px 28px rgba(60, 45, 30, 0.14);
+  background: #fff;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
 }
 
 .menu-grid {
@@ -575,12 +599,8 @@
     font-size: 11px;
   }
 
-  .cafe-hero-actions {
-    flex-direction: row;
-  }
-
   .about-grid {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     align-items: start;
   }
 
@@ -603,6 +623,12 @@
   .cafe-page .footer-bottom {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
