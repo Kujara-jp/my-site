@@ -37,21 +37,41 @@
     <!-- ヒーローセクション -->
     <section id="hero" class="hero cafe-hero">
       <div class="container">
-        <div class="cafe-hero-card">
-          <p class="cafe-eyebrow">Specialty Coffee & Baked</p>
-          <h1>Cafe KUJARA</h1>
-          <p class="cafe-catch">毎日に、ちょっといいコーヒー。</p>
-          <p class="cafe-sub">
-            自家焙煎のスペシャルティコーヒーと、季節の焼き菓子。落ち着ける空間をご用意しています。
-          </p>
-          <div class="cafe-hero-tags">
-            <span>自家焙煎</span>
-            <span>季節の焼き菓子</span>
-            <span>ゆったり空間</span>
+        <div class="cafe-hero-stack">
+          <div class="cafe-info-bar">
+            <span>📍 京都 / ○○駅 徒歩3分</span>
+            <span>⏰ 10:00–18:00（木曜定休）</span>
+            <span>☎ 090-1234-5678（ダミー）</span>
           </div>
-          <button class="cta-button cafe-cta" data-scroll-to="contact">
-            予約・お問い合わせ
-          </button>
+          <div class="cafe-hero-card">
+            <p class="cafe-eyebrow">Specialty Coffee & Baked</p>
+            <h1>Cafe KUJARA</h1>
+            <p class="cafe-catch">毎日に、ちょっといいコーヒー。</p>
+            <p class="cafe-sub">
+              自家焙煎のスペシャルティコーヒーと、季節の焼き菓子。落ち着ける空間をご用意しています。
+            </p>
+            <div class="cafe-hero-tags">
+              <span>自家焙煎</span>
+              <span>季節の焼き菓子</span>
+              <span>ゆったり空間</span>
+            </div>
+            <div class="cafe-hero-actions">
+              <a
+                class="cta-button cafe-cta cafe-cta-primary"
+                href="#contact"
+                data-scroll-to="contact"
+              >
+                予約・お問い合わせ
+              </a>
+              <a
+                class="cta-button cafe-cta cafe-cta-secondary"
+                href="#menu"
+                data-scroll-to="menu"
+              >
+                メニューを見る
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -103,9 +123,31 @@
             <h3>Coffee</h3>
             <ul class="menu-list">
               <li>
-                <span class="menu-name">ドリップコーヒー</span>
+                <div class="menu-item-main">
+                  <span class="menu-name">ドリップコーヒー</span>
+                  <span class="menu-desc">
+                    産地別を日替わりで。香りと酸味のバランス。
+                  </span>
+                </div>
                 <span class="menu-tag">おすすめ</span>
                 <span class="menu-price">¥500</span>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">コールドブリュー</span>
+                  <span class="menu-desc">
+                    12時間抽出のすっきりとした後味。
+                  </span>
+                </div>
+                <span class="menu-tag">人気</span>
+                <span class="menu-price">¥580</span>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">エスプレッソ</span>
+                  <span class="menu-desc">深煎りのコクと濃厚な香り。</span>
+                </div>
+                <span class="menu-price">¥420</span>
               </li>
             </ul>
           </div>
@@ -113,14 +155,32 @@
             <h3>Latte</h3>
             <ul class="menu-list">
               <li>
-                <span class="menu-name">カフェラテ</span>
+                <div class="menu-item-main">
+                  <span class="menu-name">カフェラテ</span>
+                  <span class="menu-desc">
+                    ミルクの甘みとコーヒーの調和。
+                  </span>
+                </div>
                 <span class="menu-tag">人気</span>
                 <span class="menu-price">¥600</span>
               </li>
               <li>
-                <span class="menu-name">抹茶ラテ</span>
+                <div class="menu-item-main">
+                  <span class="menu-name">抹茶ラテ</span>
+                  <span class="menu-desc">
+                    宇治抹茶のほろ苦さとクリーミーさ。
+                  </span>
+                </div>
                 <span class="menu-tag">季節限定</span>
                 <span class="menu-price">¥650</span>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">ハニーラテ</span>
+                  <span class="menu-desc">やさしい甘みで飲みやすく。</span>
+                </div>
+                <span class="menu-tag">おすすめ</span>
+                <span class="menu-price">¥620</span>
               </li>
             </ul>
           </div>
@@ -128,15 +188,30 @@
             <h3>Sweets</h3>
             <ul class="menu-list">
               <li>
-                <span class="menu-name">チーズケーキ</span>
+                <div class="menu-item-main">
+                  <span class="menu-name">ベイクドチーズケーキ</span>
+                  <span class="menu-desc">
+                    しっとり濃厚、コーヒーと相性抜群。
+                  </span>
+                </div>
+                <span class="menu-tag">人気</span>
                 <span class="menu-price">¥550</span>
               </li>
               <li>
-                <span class="menu-name">季節のタルト</span>
-                <span class="menu-price">¥580</span>
+                <div class="menu-item-main">
+                  <span class="menu-name">季節のフルーツタルト</span>
+                  <span class="menu-desc">旬の果実をたっぷり使用。</span>
+                </div>
+                <span class="menu-tag">季節限定</span>
+                <span class="menu-price">¥600</span>
               </li>
               <li>
-                <span class="menu-name">クロワッサン</span>
+                <div class="menu-item-main">
+                  <span class="menu-name">クロワッサン</span>
+                  <span class="menu-desc">
+                    発酵バターの香りとサクサク食感。
+                  </span>
+                </div>
                 <span class="menu-price">¥420</span>
               </li>
             </ul>
@@ -150,12 +225,12 @@
       <div class="container">
         <div class="section-head">
           <h2>ギャラリー</h2>
-          <p class="section-lead">空間と香りが伝わる、3つのシーン。</p>
+          <p class="section-lead">空間と香りが伝わる、6つのシーン。</p>
         </div>
         <div class="gallery-grid">
           <figure class="gallery-item">
             <img
-              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+              src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
               alt="店内の雰囲気"
               loading="lazy"
             />
@@ -163,8 +238,24 @@
           </figure>
           <figure class="gallery-item">
             <img
-              src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=900&q=80"
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80"
+              alt="店内の席"
+              loading="lazy"
+            />
+            <figcaption>店内</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
               alt="コーヒーのイメージ"
+              loading="lazy"
+            />
+            <figcaption>コーヒー</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=900&q=80"
+              alt="コーヒーのサーブ"
               loading="lazy"
             />
             <figcaption>コーヒー</figcaption>
@@ -173,6 +264,14 @@
             <img
               src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
               alt="スイーツのイメージ"
+              loading="lazy"
+            />
+            <figcaption>スイーツ</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
+              alt="焼き菓子の盛り合わせ"
               loading="lazy"
             />
             <figcaption>スイーツ</figcaption>
@@ -221,6 +320,9 @@
         <h2>お問い合わせ</h2>
         <p class="contact-note">
           内容が固まっていなくても大丈夫です。お気軽にご連絡ください。
+        </p>
+        <p class="contact-flow">
+          送信後、24時間以内にご返信します。ご希望日時・人数をご記入ください。
         </p>
         <form class="contact-form" id="contactForm">
           <div class="form-group">
