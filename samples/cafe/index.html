@@ -27,9 +27,6 @@
           <li><a href="#hero">ホーム</a></li>
           <li><a href="#about">カフェについて</a></li>
           <li><a href="#menu">メニュー</a></li>
-          <li class="nav-cta-item">
-            <a class="nav-cta" href="#contact" data-scroll-to="contact">予約</a>
-          </li>
           <li><a href="#gallery">ギャラリー</a></li>
           <li><a href="#access">アクセス</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
@@ -223,30 +220,6 @@
       </div>
     </section>
 
-    <!-- 今週のおすすめセクション -->
-    <section class="features cafe-section cafe-recommend">
-      <div class="container">
-        <div class="section-head">
-          <h2>今週のおすすめ</h2>
-          <p class="section-lead">ご来店前にチェックしたいトピックス。</p>
-        </div>
-        <div class="recommend-grid">
-          <div class="recommend-card">
-            <p class="recommend-title">本日の豆</p>
-            <p class="recommend-text">エチオピア（フルーティー）</p>
-          </div>
-          <div class="recommend-card">
-            <p class="recommend-title">季節限定</p>
-            <p class="recommend-text">いちごタルト</p>
-          </div>
-          <div class="recommend-card">
-            <p class="recommend-title">混雑目安</p>
-            <p class="recommend-text">土日 14:00〜17:00 は混みやすいです</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ギャラリーセクション -->
     <section id="gallery" class="features cafe-section">
       <div class="container">
@@ -344,37 +317,28 @@
     <!-- 問い合わせセクション -->
     <section id="contact" class="contact cafe-section">
       <div class="container">
-        <h2>ご予約・お問い合わせ</h2>
+        <h2>お問い合わせ</h2>
         <p class="contact-note">
-          ご予約の内容が固まっていなくても大丈夫です。お気軽にご連絡ください。
+          内容が固まっていなくても大丈夫です。お気軽にご連絡ください。
         </p>
         <p class="contact-flow">
           送信後、24時間以内にご返信します。ご希望日時・人数をご記入ください。
         </p>
         <form class="contact-form" id="contactForm">
           <div class="form-group">
-            <input type="text" name="name" placeholder="お名前" required />
+            <input type="text" placeholder="お名前" required />
           </div>
           <div class="form-group">
-            <input type="email" name="email" placeholder="メールアドレス" required />
+            <input type="email" placeholder="メールアドレス" required />
           </div>
           <div class="form-group">
-            <input type="date" name="date" placeholder="ご希望日" required />
+            <input type="tel" placeholder="電話番号（任意）" />
           </div>
           <div class="form-group">
-            <input type="time" name="time" placeholder="ご希望時間" required />
-          </div>
-          <div class="form-group">
-            <input type="number" name="guests" min="1" placeholder="人数" required />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="ご要望・アレルギーなど" rows="6"></textarea>
+            <textarea placeholder="メッセージ" rows="6" required></textarea>
           </div>
           <button type="submit" class="submit-button">送信する</button>
         </form>
-        <p class="form-success" role="status" aria-live="polite" hidden>
-          送信ありがとうございます。内容を確認し、24時間以内にご返信します。
-        </p>
       </div>
     </section>
 
@@ -410,38 +374,5 @@
     </footer>
 
     <script src="../../assets/js/main.js"></script>
-    <script>
-      (function () {
-        const setupForm = () => {
-          const form = document.getElementById("contactForm");
-          const successMessage = document.querySelector(".form-success");
-
-          if (!form) {
-            return;
-          }
-
-          form.addEventListener(
-            "submit",
-            (event) => {
-              event.preventDefault();
-              event.stopImmediatePropagation();
-
-              if (successMessage) {
-                successMessage.hidden = false;
-              }
-
-              form.reset();
-            },
-            true
-          );
-        };
-
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", setupForm);
-        } else {
-          setupForm();
-        }
-      })();
-    </script>
   </body>
 </html>
