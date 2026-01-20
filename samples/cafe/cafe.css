@@ -311,9 +311,10 @@
 
 .menu-list li {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
-  column-gap: 12px;
+  column-gap: 14px;
+  row-gap: 6px;
   border-bottom: 1px dashed #e6d8c9;
   padding-bottom: 12px;
 }
@@ -321,19 +322,40 @@
 .menu-item-main {
   display: grid;
   gap: 4px;
+  min-width: 0;
 }
 
 .menu-name {
   color: var(--cafe-text);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: block;
+  line-break: strict;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .menu-desc {
   font-size: 12px;
   color: var(--cafe-muted);
   line-height: 1.6;
+  line-break: strict;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.menu-item-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: start;
+  gap: 6px;
+  text-align: right;
+}
+
+.menu-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
 }
 
 .menu-tag {
@@ -344,7 +366,6 @@
   padding: 3px 10px;
   background: #f4efe7;
   white-space: nowrap;
-  justify-self: start;
 }
 
 .menu-badge {
@@ -361,8 +382,6 @@
 .menu-price {
   color: var(--cafe-brown);
   font-weight: 700;
-  grid-column: 3;
-  justify-self: end;
 }
 
 .recommend-grid {
@@ -746,55 +765,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-items: center;
     gap: 10px 12px;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .cafe-hero-tags span {
-    justify-self: center;
-  }
-
-  .cafe-hero-tags span:nth-child(3) {
+  .cafe-hero-tags span:nth-child(odd):last-child {
     grid-column: 1 / -1;
-  }
-
-  .menu-list li {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 8.5rem);
-    grid-auto-rows: auto;
-    row-gap: 6px;
-    column-gap: 10px;
-    align-items: start;
-  }
-
-  .menu-item-main {
-    min-width: 0;
-  }
-
-  .menu-name {
-    display: block;
-    word-break: normal;
-    overflow-wrap: break-word;
-    line-break: strict;
-  }
-
-  .menu-badge {
-    display: inline-flex;
-    margin-left: 6px;
-  }
-
-  .menu-desc {
-    word-break: normal;
-    overflow-wrap: break-word;
-    line-break: strict;
-  }
-
-  .menu-tag {
-    justify-self: end;
-    align-self: start;
-    text-align: right;
-    white-space: normal;
-  }
-
-  .menu-price {
-    justify-self: end;
-    align-self: start;
   }
 }
