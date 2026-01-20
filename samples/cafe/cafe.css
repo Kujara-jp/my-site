@@ -360,6 +360,7 @@
   justify-content: flex-end;
   max-width: 100%;
   align-content: flex-start;
+  min-width: 0;
 }
 
 .menu-tag {
@@ -386,6 +387,7 @@
 .menu-price {
   color: var(--cafe-brown);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .recommend-grid {
@@ -777,6 +779,9 @@
 
   .cafe-hero-tags span {
     justify-self: center;
+    display: inline-flex;
+    justify-content: center;
+    min-width: clamp(96px, 28vw, 128px);
   }
 
   .cafe-hero-tags span:nth-child(odd):last-child {
@@ -784,11 +789,14 @@
   }
 
   .menu-list li {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 8.5rem);
-    column-gap: 10px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 7.5rem);
+    column-gap: 12px;
   }
 
   .menu-item-meta {
+    display: grid;
+    justify-items: end;
+    align-content: start;
     width: 100%;
   }
 }
