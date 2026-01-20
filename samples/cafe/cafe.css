@@ -329,8 +329,8 @@
   color: var(--cafe-text);
   display: block;
   line-break: strict;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .menu-desc {
@@ -338,8 +338,8 @@
   color: var(--cafe-muted);
   line-height: 1.6;
   line-break: strict;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .menu-item-meta {
@@ -349,6 +349,8 @@
   align-self: start;
   gap: 6px;
   text-align: right;
+  justify-self: end;
+  min-width: 0;
 }
 
 .menu-badges {
@@ -356,6 +358,8 @@
   flex-wrap: wrap;
   gap: 6px;
   justify-content: flex-end;
+  max-width: 100%;
+  align-content: flex-start;
 }
 
 .menu-tag {
@@ -771,7 +775,20 @@
     margin-right: auto;
   }
 
+  .cafe-hero-tags span {
+    justify-self: center;
+  }
+
   .cafe-hero-tags span:nth-child(odd):last-child {
     grid-column: 1 / -1;
+  }
+
+  .menu-list li {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 8.5rem);
+    column-gap: 10px;
+  }
+
+  .menu-item-meta {
+    width: 100%;
   }
 }
