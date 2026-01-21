@@ -767,37 +767,53 @@
 
 @media (max-width: 480px) {
   .cafe-hero-tags {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 8px 12px;
     width: 100%;
+    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .cafe-hero-tags span {
-    display: inline-flex;
-    justify-content: center;
-    text-align: center;
+    white-space: nowrap;
   }
 
   .menu-list li {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 10px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "name price"
+      "badges price"
+      "desc desc";
+    row-gap: 6px;
+    column-gap: 12px;
   }
 
   .menu-item-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: 100%;
+    display: contents;
+  }
+
+  .menu-item-main {
+    display: contents;
+  }
+
+  .menu-name {
+    grid-area: name;
+    white-space: nowrap;
+  }
+
+  .menu-desc {
+    grid-area: desc;
   }
 
   .menu-badges {
+    grid-area: badges;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     gap: 4px;
+    min-width: 0;
   }
 
   .menu-badge,
@@ -807,6 +823,8 @@
   }
 
   .menu-price {
-    margin-left: auto;
+    grid-area: price;
+    justify-self: end;
+    align-self: start;
   }
 }
