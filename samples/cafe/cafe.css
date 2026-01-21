@@ -767,36 +767,46 @@
 
 @media (max-width: 480px) {
   .cafe-hero-tags {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-items: center;
-    gap: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
     width: 100%;
-    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .cafe-hero-tags span {
-    justify-self: center;
     display: inline-flex;
     justify-content: center;
-    min-width: clamp(96px, 28vw, 128px);
-  }
-
-  .cafe-hero-tags span:nth-child(odd):last-child {
-    grid-column: 1 / -1;
+    text-align: center;
   }
 
   .menu-list li {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 7.5rem);
-    column-gap: 12px;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 10px;
   }
 
   .menu-item-meta {
-    display: grid;
-    justify-items: end;
-    align-content: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     width: 100%;
+  }
+
+  .menu-badges {
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+
+  .menu-badge,
+  .menu-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .menu-price {
+    margin-left: auto;
   }
 }
