@@ -158,6 +158,14 @@
   margin-bottom: 24px;
 }
 
+.cafe-sub-mobile {
+  display: none;
+}
+
+.cafe-sub-desktop {
+  display: inline;
+}
+
 .cafe-hero-tags {
   display: flex;
   flex-wrap: wrap;
@@ -763,21 +771,51 @@
   .cafe-page .submit-button {
     width: 100%;
   }
+
+  .menu-badges {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    overflow-x: auto;
+    max-width: 100%;
+    width: 100%;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @media (max-width: 480px) {
   .cafe-hero-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 12px;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 8px 12px;
     width: 100%;
-    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .cafe-hero-tags span {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 0;
+    padding: 6px 12px;
+  }
+
+  .cafe-hero-tags span:nth-child(3) {
+    display: none;
+  }
+
+  .cafe-sub-desktop {
+    display: none;
+  }
+
+  .cafe-sub-mobile {
+    display: inline;
     white-space: nowrap;
   }
 
