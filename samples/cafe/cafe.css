@@ -753,10 +753,6 @@
   background: linear-gradient(135deg, #f5b46a, #c97c4a);
 }
 
-.cafe-sticky-cta {
-  display: none;
-}
-
 @media (min-width: 768px) {
   .cafe-hero-card h1 {
     font-size: 56px;
@@ -805,10 +801,6 @@
 }
 
 @media (max-width: 767px) {
-  .cafe-page {
-    padding-bottom: calc(84px + env(safe-area-inset-bottom));
-  }
-
   .cafe-hero-card {
     padding: 36px 24px;
   }
@@ -869,25 +861,6 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .cafe-sticky-cta {
-    position: fixed;
-    left: 50%;
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    transform: translateX(-50%);
-    z-index: 990;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: min(92%, 360px);
-    padding: 12px 16px;
-    border-radius: 999px;
-    background: var(--cafe-accent);
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    box-shadow: 0 14px 24px rgba(201, 124, 74, 0.35);
-  }
 }
 
 @media (max-width: 480px) {
