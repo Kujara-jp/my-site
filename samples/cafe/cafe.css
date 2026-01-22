@@ -256,6 +256,50 @@
   margin-top: 16px;
 }
 
+.about-highlight {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--cafe-card);
+  border: 1px solid var(--cafe-border);
+  box-shadow: 0 10px 18px rgba(60, 45, 30, 0.08);
+}
+
+.about-highlight-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d8c3ad, #f2e6d9);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-highlight-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.about-highlight-title {
+  font-size: 12px;
+  color: var(--cafe-green);
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+
+.about-highlight-text {
+  font-size: 12px;
+  color: var(--cafe-muted);
+  line-height: 1.6;
+}
+
 .about-concepts {
   display: grid;
   gap: 16px;
@@ -455,11 +499,7 @@
   padding: 16px;
   color: #fff;
   font-weight: 600;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0),
-    rgba(35, 25, 15, 0.7)
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(35, 25, 15, 0.7));
 }
 
 .access-grid {
@@ -633,7 +673,9 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
   z-index: 999;
 }
 
@@ -711,6 +753,10 @@
   background: linear-gradient(135deg, #f5b46a, #c97c4a);
 }
 
+.cafe-sticky-cta {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .cafe-hero-card h1 {
     font-size: 56px;
@@ -759,6 +805,10 @@
 }
 
 @media (max-width: 767px) {
+  .cafe-page {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+
   .cafe-hero-card {
     padding: 36px 24px;
   }
@@ -767,9 +817,46 @@
     font-size: 40px;
   }
 
+  .cafe-info-bar {
+    padding: 6px 12px;
+    gap: 6px 10px;
+    font-size: 11px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(60, 45, 30, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .cafe-info-bar span {
+    gap: 4px;
+  }
+
+  .cafe-section {
+    padding: 64px 0;
+  }
+
+  .section-head {
+    margin-bottom: 28px;
+  }
+
+  .section-lead {
+    margin-top: 8px;
+  }
+
+  .about-highlight {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+
   .cafe-page .cta-button,
   .cafe-page .submit-button {
     width: 100%;
+  }
+
+  .menu-list li {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 9.5rem);
+    column-gap: 12px;
   }
 
   .menu-badges {
@@ -781,6 +868,26 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+
+  .cafe-sticky-cta {
+    position: fixed;
+    left: 50%;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    z-index: 990;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: min(92%, 360px);
+    padding: 12px 16px;
+    border-radius: 999px;
+    background: var(--cafe-accent);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    box-shadow: 0 14px 24px rgba(201, 124, 74, 0.35);
+  }
 }
 
 @media (max-width: 480px) {
@@ -790,6 +897,10 @@
     align-items: center;
     gap: 10px 12px;
     flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 12px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -812,17 +923,57 @@
 
   .cafe-sub-mobile {
     display: inline;
+    white-space: nowrap;
   }
 
   .menu-list li {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 7.5rem);
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "name price"
+      "badges price"
+      "desc desc";
+    row-gap: 6px;
     column-gap: 12px;
   }
 
   .menu-item-meta {
-    display: grid;
-    justify-items: end;
-    align-content: start;
-    width: 100%;
+    display: contents;
+  }
+
+  .menu-item-main {
+    display: contents;
+  }
+
+  .menu-name {
+    grid-area: name;
+    white-space: normal;
+  }
+
+  .menu-desc {
+    grid-area: desc;
+  }
+
+  .menu-badges {
+    grid-area: badges;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 4px;
+    overflow-x: auto;
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu-badge,
+  .menu-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .menu-price {
+    grid-area: price;
+    justify-self: end;
+    align-self: start;
   }
 }
