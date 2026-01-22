@@ -790,6 +790,10 @@
     align-items: center;
     gap: 10px 12px;
     flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 12px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -812,17 +816,53 @@
 
   .cafe-sub-mobile {
     display: inline;
+    white-space: nowrap;
   }
 
   .menu-list li {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 7.5rem);
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "name price"
+      "badges price"
+      "desc desc";
+    row-gap: 6px;
     column-gap: 12px;
   }
 
   .menu-item-meta {
-    display: grid;
-    justify-items: end;
-    align-content: start;
-    width: 100%;
+    display: contents;
+  }
+
+  .menu-item-main {
+    display: contents;
+  }
+
+  .menu-name {
+    grid-area: name;
+    white-space: nowrap;
+  }
+
+  .menu-desc {
+    grid-area: desc;
+  }
+
+  .menu-badges {
+    grid-area: badges;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .menu-badge,
+  .menu-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .menu-price {
+    grid-area: price;
+    justify-self: end;
+    align-self: start;
   }
 }
