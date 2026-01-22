@@ -947,6 +947,7 @@
   .menu-name {
     grid-area: name;
     white-space: normal;
+    white-space: nowrap;
   }
 
   .menu-desc {
@@ -963,6 +964,7 @@
     max-width: 100%;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    min-width: 0;
   }
 
   .menu-badge,
