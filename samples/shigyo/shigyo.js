@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
   const backToTop = document.querySelector(".back-to-top");
+  const stickyCta = document.querySelector(".sticky-cta");
+  const heroSection = document.getElementById("hero");
   const faqButtons = document.querySelectorAll(".faq-question");
 
   const setMenuState = (open) => {
@@ -86,6 +88,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggleBackToTop();
   window.addEventListener("scroll", toggleBackToTop, { passive: true });
+
+  if (stickyCta && heroSection) {
+    const setStickyVisible = (visible) => {
+      stickyCta.classList.toggle("is-visible", visible);
+      stickyCta.setAttribute("aria-hidden", String(!visible));
+    };
+
+    setStickyVisible(false);
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setStickyVisible(!entry.isIntersecting);
+        },
+        { threshold: 0.3 },
+      );
+
+      observer.observe(heroSection);
+    } else {
+      const onScroll = () => {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        setStickyVisible(window.scrollY > heroBottom - 80);
+      };
+
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    }
+  }
 
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 768) {
