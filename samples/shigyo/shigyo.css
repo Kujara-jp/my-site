@@ -574,11 +574,12 @@
   font-weight: 600;
   color: var(--navy-900);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
   cursor: pointer;
   touch-action: manipulation;
+  line-height: 1.5;
 }
 
 .faq-icon {
