@@ -158,10 +158,12 @@
 
 .hero-title {
   text-wrap: balance;
+  max-width: 22em;
+  margin: 0;
 }
 
 .hero-title span {
-  display: inline-block;
+  display: inline;
 }
 
 .hero-lead {
@@ -483,13 +485,17 @@
   border-color: rgba(199, 139, 50, 0.4);
   background: #fffdf8;
   box-shadow: 0 18px 32px rgba(43, 36, 31, 0.18);
+}
+
+.pricing-card.has-badge {
   padding-top: 40px;
 }
 
-.pricing-card-primary .pricing-badge {
+.pricing-card.has-badge .pricing-badge {
   position: absolute;
   top: 16px;
   left: 16px;
+  z-index: 1;
 }
 
 .pricing-card-primary::before {
@@ -587,7 +593,7 @@
 
 .faq-list {
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .faq-item {
@@ -606,7 +612,7 @@
   font-weight: 600;
   color: var(--navy-900);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   cursor: pointer;
@@ -623,6 +629,7 @@
   justify-content: center;
   color: var(--navy-700);
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .faq-answer {
@@ -645,6 +652,10 @@
   font-size: 13px;
   color: var(--muted);
   margin: 0;
+}
+
+.faq-section .section-head {
+  margin-bottom: 20px;
 }
 
 .faq-note {
@@ -917,6 +928,10 @@
     font-size: 34px;
   }
 
+  .hero-title {
+    max-width: none;
+  }
+
   .hero-actions {
     grid-template-columns: auto auto;
     justify-content: flex-start;
@@ -1025,6 +1040,10 @@
 @media (max-width: 480px) {
   .hero-content h1 {
     font-size: 24px;
+  }
+
+  .hero-title {
+    max-width: 20em;
   }
 
   .shigyo-logo {
