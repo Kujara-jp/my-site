@@ -10,6 +10,7 @@
   --border: #e2e7f0;
   --text: #1f2937;
   --muted: #5f6b7a;
+  --sticky-cta-height: 72px;
   font-family:
     "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui,
     -apple-system, "Segoe UI", sans-serif;
@@ -164,6 +165,7 @@
   gap: 12px;
   margin-top: 20px;
   width: min(100%, 340px);
+  justify-items: stretch;
 }
 
 .hero-actions .btn {
@@ -179,6 +181,8 @@
   padding: 12px 22px;
   font-weight: 600;
   font-size: 14px;
+  min-height: 44px;
+  line-height: 1.2;
   border: 1px solid transparent;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -403,6 +407,11 @@
   display: grid;
   gap: 10px;
   position: relative;
+}
+
+.pricing-card .btn {
+  width: 100%;
+  margin-top: 4px;
 }
 
 .pricing-card ul {
@@ -799,6 +808,37 @@
   transform: translateY(-4px);
 }
 
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -10px 24px rgba(16, 24, 40, 0.12);
+  z-index: 300;
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+  display: none;
+}
+
+.sticky-cta.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
 @media (min-width: 768px) {
   .shigyo-nav-inner {
     padding: 16px 32px;
@@ -914,6 +954,26 @@
 
   .back-to-top {
     right: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .shigyo-page {
+    padding-bottom: calc(
+      var(--sticky-cta-height) + env(safe-area-inset-bottom) + 12px
+    );
+  }
+
+  .sticky-cta {
+    display: block;
+  }
+
+  .shigyo-hero {
+    padding: 56px 0 48px;
+  }
+
+  .pricing-card {
+    padding: 18px;
   }
 }
 
