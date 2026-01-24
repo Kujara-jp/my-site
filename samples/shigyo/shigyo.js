@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const panel = panelId ? document.getElementById(panelId) : null;
       if (panel) {
         panel.setAttribute("aria-hidden", String(!isOpen));
+        panel.style.maxHeight = isOpen ? `${panel.scrollHeight}px` : "0px";
       }
 
       const icon = button.querySelector(".faq-icon");
