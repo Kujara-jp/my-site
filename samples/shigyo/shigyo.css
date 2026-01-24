@@ -157,13 +157,21 @@
 }
 
 .hero-title {
-  text-wrap: balance;
   max-width: 22rem;
   margin: 0;
+  line-break: strict;
+  word-break: normal;
 }
 
 .hero-title span {
-  display: inline;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@supports (text-wrap: balance) {
+  .hero-title {
+    text-wrap: balance;
+  }
 }
 
 .hero-lead {
