@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe KUJARA - サンプルページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="cafe.css" />
+  </head>
+  <body class="cafe-page">
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">Cafe KUJARA</div>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">ホーム</a></li>
+          <li><a href="#about">カフェについて</a></li>
+          <li><a href="#menu">メニュー</a></li>
+          <li class="nav-cta-item">
+            <a class="nav-cta" href="#contact" data-scroll-to="contact">予約</a>
+          </li>
+          <li><a href="#gallery">ギャラリー</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section id="hero" class="hero cafe-hero">
+      <div class="container">
+        <div class="cafe-hero-stack">
+          <div class="cafe-info-bar">
+            <span>📍 京都 / ○○駅 徒歩3分</span>
+            <span>⏰ 10:00–18:00（木曜定休）</span>
+            <span>☎ 090-1234-5678（ダミー）</span>
+          </div>
+          <div class="cafe-hero-card">
+            <p class="cafe-eyebrow">Specialty Coffee & Baked</p>
+            <h1>Cafe KUJARA</h1>
+            <p class="cafe-catch">毎日に、ちょっといいコーヒー。</p>
+            <p class="cafe-sub">
+              自家焙煎のスペシャルティコーヒーと、季節の焼き菓子。
+              <span class="cafe-sub-desktop"
+                >落ち着ける空間をご用意しています。</span
+              >
+              <span class="cafe-sub-mobile"
+                >ゆったり空間で、落ち着けるひとときを。</span
+              >
+            </p>
+            <div class="cafe-hero-tags">
+              <span>自家焙煎</span>
+              <span>季節の焼き菓子</span>
+            </div>
+            <div class="cafe-hero-actions">
+              <a
+                class="cta-button cafe-cta cafe-cta-primary"
+                href="#contact"
+                data-scroll-to="contact"
+              >
+                予約・お問い合わせ
+              </a>
+              <a
+                class="cta-button cafe-cta cafe-cta-secondary"
+                href="#menu"
+                data-scroll-to="menu"
+              >
+                メニューを見る
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aboutセクション -->
+    <section id="about" class="features cafe-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>カフェについて</h2>
+          <p class="section-lead">日常に寄り添う、静かなコーヒースポット。</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                Cafe
+                KUJARAは、街角にある小さな自家焙煎カフェです。豆の個性を生かした香りと味わいを丁寧に引き出すことを
+                大切にしています。
+              </p>
+              <p>
+                木の温もりを感じる店内で、ゆったり過ごせる席と季節の焼き菓子をご用意。忙しい日々にそっと寄り添う場所を目指しています。
+              </p>
+            </div>
+            <div class="about-highlight" aria-label="店内の雰囲気">
+              <div class="about-highlight-photo" aria-hidden="true"></div>
+              <div class="about-highlight-body">
+                <p class="about-highlight-title">店内の雰囲気</p>
+                <p class="about-highlight-text">
+                  木の温もり / 18席 / 静かなBGM
+                </p>
+              </div>
+            </div>
+            <div class="about-concepts">
+              <div class="concept-card">
+                <h3>豆の個性</h3>
+                <p>産地ごとの風味を生かし、毎日焙煎しています。</p>
+              </div>
+              <div class="concept-card">
+                <h3>季節の甘味</h3>
+                <p>焼き菓子は季節の素材を取り入れて焼き上げます。</p>
+              </div>
+              <div class="concept-card">
+                <h3>心地よい席</h3>
+                <p>作業にも会話にも使える、落ち着いた空間です。</p>
+              </div>
+            </div>
+          </div>
+          <figure class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=80"
+              alt="カフェの店内席の様子"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- メニューセクション -->
+    <section id="menu" class="features cafe-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>メニュー</h2>
+          <p class="section-lead">
+            香り高いコーヒーと手作りスイーツをご用意しています。
+          </p>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <h3>Coffee</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">ドリップコーヒー</span>
+                  <span class="menu-desc">
+                    産地別を日替わりで。香りと酸味のバランス。
+                  </span>
+                </div>
+                <div class="menu-item-meta">
+                  <div class="menu-badges">
+                    <span class="menu-badge">人気TOP3</span>
+                    <span class="menu-tag">おすすめ</span>
+                  </div>
+                  <span class="menu-price">¥500</span>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">コールドブリュー</span>
+                  <span class="menu-desc">
+                    12時間抽出のすっきりとした後味。
+                  </span>
+                </div>
+                <div class="menu-item-meta">
+                  <div class="menu-badges">
+                    <span class="menu-tag">人気</span>
+                  </div>
+                  <span class="menu-price">¥580</span>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">エスプレッソ</span>
+                  <span class="menu-desc"> 深煎りのコクと濃厚な香り。 </span>
+                </div>
+                <div class="menu-item-meta">
+                  <span class="menu-price">¥420</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="menu-card">
+            <h3>Latte</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">カフェラテ</span>
+                  <span class="menu-desc">
+                    ミルクの甘みとコーヒーの調和。
+                  </span>
+                </div>
+                <div class="menu-item-meta">
+                  <div class="menu-badges">
+                    <span class="menu-badge">人気TOP3</span>
+                    <span class="menu-tag">人気</span>
+                  </div>
+                  <span class="menu-price">¥600</span>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">抹茶ラテ</span>
+                  <span class="menu-desc">
+                    宇治抹茶のほろ苦さとクリーミーさ。
+                  </span>
+                </div>
+                <div class="menu-item-meta">
+                  <div class="menu-badges">
+                    <span class="menu-tag">季節限定</span>
+                  </div>
+                  <span class="menu-price">¥650</span>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">ハニーラテ</span>
+                  <span class="menu-desc"> やさしい甘みで飲みやすく。 </span>
+                </div>
+                <div class="menu-item-meta">
+                  <div class="menu-badges">
+                    <span class="menu-tag">おすすめ</span>
+                  </div>
+                  <span class="menu-price">¥620</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="menu-card">
+            <h3>Sweets</h3>
+            <ul class="menu-list">
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">ベイクドチーズケーキ</span>
+                  <span class="menu-desc">
+                    しっとり濃厚、コーヒーと相性抜群。
+                  </span>
+                </div>
+                <div class="menu-item-meta">
+                  <div class="menu-badges">
+                    <span class="menu-badge">人気TOP3</span>
+                    <span class="menu-tag">人気</span>
+                  </div>
+                  <span class="menu-price">¥550</span>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">季節のフルーツタルト</span>
+                  <span class="menu-desc"> 旬の果実をたっぷり使用。 </span>
+                </div>
+                <div class="menu-item-meta">
+                  <div class="menu-badges">
+                    <span class="menu-tag">季節限定</span>
+                  </div>
+                  <span class="menu-price">¥600</span>
+                </div>
+              </li>
+              <li>
+                <div class="menu-item-main">
+                  <span class="menu-name">クロワッサン</span>
+                  <span class="menu-desc">
+                    発酵バターの香りとサクサク食感。
+                  </span>
+                </div>
+                <div class="menu-item-meta">
+                  <span class="menu-price">¥420</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 今週のおすすめセクション -->
+    <section class="features cafe-section cafe-recommend">
+      <div class="container">
+        <div class="section-head">
+          <h2>今週のおすすめ</h2>
+          <p class="section-lead">ご来店前にチェックしたいトピックス。</p>
+        </div>
+        <div class="recommend-grid">
+          <div class="recommend-card">
+            <p class="recommend-title">本日の豆</p>
+            <p class="recommend-text">エチオピア（フルーティー）</p>
+          </div>
+          <div class="recommend-card">
+            <p class="recommend-title">季節限定</p>
+            <p class="recommend-text">いちごタルト</p>
+          </div>
+          <div class="recommend-card">
+            <p class="recommend-title">混雑目安</p>
+            <p class="recommend-text">土日 14:00〜17:00 は混みやすいです</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ギャラリーセクション -->
+    <section id="gallery" class="features cafe-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>ギャラリー</h2>
+          <p class="section-lead">空間と香りが伝わる、6つのシーン。</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80"
+              alt="店内の雰囲気"
+              loading="lazy"
+            />
+            <figcaption>店内</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=80"
+              alt="店内の席"
+              loading="lazy"
+            />
+            <figcaption>店内</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80"
+              alt="コーヒーのイメージ"
+              loading="lazy"
+            />
+            <figcaption>コーヒー</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=1600&q=80"
+              alt="コーヒーのサーブ"
+              loading="lazy"
+            />
+            <figcaption>コーヒー</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80"
+              alt="スイーツのイメージ"
+              loading="lazy"
+            />
+            <figcaption>スイーツ</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
+              data-full="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=1600&q=80"
+              alt="焼き菓子の盛り合わせ"
+              loading="lazy"
+            />
+            <figcaption>スイーツ</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- アクセスセクション -->
+    <section id="access" class="features cafe-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>アクセス</h2>
+          <p class="section-lead">ふらりと立ち寄れる、駅近の小さなカフェ。</p>
+        </div>
+        <div class="access-grid">
+          <div class="access-card">
+            <h3>住所</h3>
+            <p>京都府◯◯市◯◯ 1-2-3</p>
+          </div>
+          <div class="access-card">
+            <h3>営業時間</h3>
+            <p>10:00〜18:00（木曜定休）</p>
+          </div>
+          <div class="access-card">
+            <h3>設備</h3>
+            <div class="amenities">
+              <span class="amenity-tag">テイクアウトOK</span>
+              <span class="amenity-tag">Wi-Fiあり</span>
+              <span class="amenity-tag">電源席あり</span>
+            </div>
+          </div>
+        </div>
+        <div class="map-box">
+          <div class="map-embed">
+            <iframe
+              class="map-iframe"
+              title="Googleマップ"
+              src="https://www.google.com/maps?q=Kyoto%20Station&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="map-meta">
+            <p class="map-caption">
+              京都駅から徒歩5分 / 近隣にコインパーキングあり
+            </p>
+            <a
+              class="map-link"
+              href="https://maps.google.com/"
+              target="_blank"
+              rel="noopener"
+              >Googleマップで開く</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 問い合わせセクション -->
+    <section id="contact" class="contact cafe-section">
+      <div class="container">
+        <h2>ご予約・お問い合わせ</h2>
+        <p class="contact-note">
+          ご予約の内容が固まっていなくても大丈夫です。お気軽にご連絡ください。
+        </p>
+        <p class="contact-flow">
+          送信後、24時間以内にご返信します。ご希望日時・人数をご記入ください。
+        </p>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="お名前" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="メールアドレス"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input type="date" name="date" placeholder="ご希望日" required />
+          </div>
+          <div class="form-group">
+            <input type="time" name="time" placeholder="ご希望時間" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              name="guests"
+              min="1"
+              placeholder="人数"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea placeholder="ご要望・アレルギーなど" rows="6"></textarea>
+          </div>
+          <button type="submit" class="submit-button">送信する</button>
+        </form>
+        <p class="form-error" role="alert" aria-live="assertive" hidden>
+          必須項目（希望日・希望時間・人数）をご入力ください。
+        </p>
+        <p class="form-success" role="status" aria-live="polite" hidden>
+          送信ありがとうございます。内容を確認し、24時間以内にご返信します。
+        </p>
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Cafe KUJARA</h4>
+            <p>毎日に、ちょっといいコーヒー。</p>
+          </div>
+          <div class="footer-section">
+            <h4>リンク</h4>
+            <ul>
+              <li><a href="#hero">ホーム</a></li>
+              <li><a href="#about">カフェについて</a></li>
+              <li><a href="#menu">メニュー</a></li>
+              <li><a href="#gallery">ギャラリー</a></li>
+              <li><a href="#access">アクセス</a></li>
+              <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>お問い合わせ</h4>
+            <p>Email: info@cafekujara.com</p>
+            <p>Phone: 075-000-0000</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <a
+            class="footer-social-link"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener"
+            >Instagram</a
+          >
+          <p>&copy; 2026 Cafe KUJARA. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div
+        class="lightbox-content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="ギャラリーの拡大表示"
+      >
+        <button
+          type="button"
+          class="lightbox-close"
+          data-lightbox-close
+          aria-label="閉じる"
+        >
+          ×
+        </button>
+        <img class="lightbox-image" alt="" />
+      </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script>
+      (function () {
+        const setupForm = () => {
+          const form = document.getElementById("contactForm");
+          const successMessage = document.querySelector(".form-success");
+          const errorMessage = document.querySelector(".form-error");
+          const requiredFields = new Set(["date", "time", "guests"]);
+
+          if (!form) {
+            return;
+          }
+
+          const requiredInputs = Array.from(
+            form.querySelectorAll(
+              'input[name="date"], input[name="time"], input[name="guests"]',
+            ),
+          );
+
+          const hideSuccess = () => {
+            if (successMessage) {
+              successMessage.hidden = true;
+            }
+          };
+
+          const showSuccess = () => {
+            if (successMessage) {
+              successMessage.hidden = false;
+            }
+          };
+
+          const hideError = () => {
+            if (errorMessage) {
+              errorMessage.hidden = true;
+            }
+          };
+
+          const showError = () => {
+            if (errorMessage) {
+              errorMessage.hidden = false;
+            }
+          };
+
+          const clearFieldErrors = () => {
+            requiredInputs.forEach((input) => {
+              input.classList.remove("is-error");
+            });
+          };
+
+          const isMissingValue = (input) => {
+            const value = input.value.trim();
+
+            if (input.type === "number") {
+              const count = Number(value);
+              return !value || Number.isNaN(count) || count < 1;
+            }
+
+            return value.length === 0;
+          };
+
+          const updateRequiredState = () => {
+            let hasMissing = false;
+
+            requiredInputs.forEach((input) => {
+              const missing = isMissingValue(input);
+              input.classList.toggle("is-error", missing);
+              if (missing) {
+                hasMissing = true;
+              }
+            });
+
+            return hasMissing;
+          };
+
+          form.addEventListener(
+            "invalid",
+            (event) => {
+              if (!form.contains(event.target)) {
+                return;
+              }
+
+              hideSuccess();
+
+              if (!requiredFields.has(event.target.name)) {
+                return;
+              }
+
+              event.preventDefault();
+
+              const hasMissing = updateRequiredState();
+              if (hasMissing) {
+                showError();
+              }
+            },
+            true,
+          );
+
+          form.addEventListener(
+            "input",
+            (event) => {
+              if (!requiredFields.has(event.target.name)) {
+                return;
+              }
+
+              hideSuccess();
+
+              const hasMissing = updateRequiredState();
+              if (!hasMissing) {
+                hideError();
+              }
+            },
+            true,
+          );
+
+          form.addEventListener(
+            "submit",
+            (event) => {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+
+              const hasMissing = updateRequiredState();
+              if (hasMissing) {
+                hideSuccess();
+                showError();
+                return;
+              }
+
+              hideError();
+              showSuccess();
+              form.reset();
+              clearFieldErrors();
+            },
+            true,
+          );
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", setupForm);
+        } else {
+          setupForm();
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        const setupLightbox = () => {
+          const gallery = document.querySelector(".gallery-grid");
+          const lightbox = document.getElementById("lightbox");
+          const lightboxImage = lightbox?.querySelector(".lightbox-image");
+          const closeButton = lightbox?.querySelector(".lightbox-close");
+
+          if (!gallery || !lightbox || !lightboxImage) {
+            return;
+          }
+
+          const openLightbox = (image) => {
+            const fullSrc =
+              image.dataset.full || image.currentSrc || image.src || "";
+            lightboxImage.src = fullSrc;
+            lightboxImage.alt = image.alt || "";
+            lightbox.classList.add("is-visible");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-open");
+          };
+
+          const closeLightbox = () => {
+            lightbox.classList.remove("is-visible");
+            lightbox.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("lightbox-open");
+            lightboxImage.removeAttribute("src");
+            lightboxImage.alt = "";
+          };
+
+          gallery.addEventListener("click", (event) => {
+            const item = event.target.closest(".gallery-item");
+            if (!item) {
+              return;
+            }
+
+            const image = item.querySelector("img");
+            if (!image) {
+              return;
+            }
+
+            openLightbox(image);
+          });
+
+          if (closeButton) {
+            closeButton.addEventListener("click", closeLightbox);
+          }
+
+          lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+              closeLightbox();
+            }
+          });
+
+          document.addEventListener("keydown", (event) => {
+            if (
+              event.key === "Escape" &&
+              lightbox.classList.contains("is-visible")
+            ) {
+              closeLightbox();
+            }
+          });
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", setupLightbox);
+        } else {
+          setupLightbox();
+        }
+      })();
+    </script>
+  </body>
+</html>
