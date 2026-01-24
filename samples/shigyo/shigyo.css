@@ -1,15 +1,15 @@
 .shigyo-page {
-  --navy-900: #1b2638;
-  --navy-800: #24324a;
-  --navy-700: #2f3f5c;
-  --navy-600: #3f4f6a;
-  --accent: #c78b32;
-  --bg: #f5f7fb;
+  --navy-900: #2b241f;
+  --navy-800: #3a2f28;
+  --navy-700: #4a3f36;
+  --navy-600: #5c5147;
+  --accent: #c18a4a;
+  --bg: #f7f2ec;
   --surface: #ffffff;
-  --surface-muted: #f0f3f8;
-  --border: #e2e7f0;
-  --text: #1f2937;
-  --muted: #5f6b7a;
+  --surface-muted: #f1ebe3;
+  --border: #e5dbcf;
+  --text: #2b241f;
+  --muted: #6f6359;
   --sticky-cta-height: 72px;
   font-family:
     "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui,
@@ -120,7 +120,7 @@
   padding: 64px 0 56px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(160deg, #f7f9fc 0%, #eef2f7 100%);
+  background: linear-gradient(160deg, #fbf6f0 0%, #f1e6d8 100%);
 }
 
 .shigyo-hero::before {
@@ -128,8 +128,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top right, rgba(199, 139, 50, 0.2), transparent 55%),
-    radial-gradient(circle at 10% 30%, rgba(36, 50, 74, 0.15), transparent 60%);
+    radial-gradient(circle at top right, rgba(193, 138, 74, 0.22), transparent 55%),
+    radial-gradient(circle at 10% 30%, rgba(43, 36, 31, 0.12), transparent 60%);
   pointer-events: none;
 }
 
@@ -192,15 +192,15 @@
 }
 
 .btn-primary {
-  background: var(--navy-900);
+  background: var(--navy-800);
   color: #fff;
-  box-shadow: 0 10px 20px rgba(27, 38, 56, 0.2);
+  box-shadow: 0 10px 20px rgba(43, 36, 31, 0.2);
 }
 
 .btn-secondary {
   background: var(--surface);
-  border-color: var(--navy-900);
-  color: var(--navy-900);
+  border-color: var(--navy-800);
+  color: var(--navy-800);
 }
 
 .btn-outline {
@@ -220,16 +220,17 @@
   gap: 12px;
   margin-top: 24px;
   padding: 16px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
+  background: #fffaf4;
+  border: 1px solid rgba(92, 81, 71, 0.35);
   border-radius: 16px;
 }
 
 .hero-info-title {
   font-size: 11px;
-  color: var(--muted);
+  color: var(--navy-700);
   letter-spacing: 0.08em;
   display: block;
+  font-weight: 600;
 }
 
 .hero-info-text {
@@ -973,9 +974,9 @@
   }
 
   .hero-info {
-    background: #ffffff;
-    border-color: var(--navy-600);
-    box-shadow: 0 12px 24px rgba(27, 38, 56, 0.12);
+    background: #fffdf8;
+    border-color: rgba(92, 81, 71, 0.45);
+    box-shadow: 0 12px 24px rgba(43, 36, 31, 0.12);
   }
 
   .hero-info-title {
