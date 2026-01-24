@@ -156,6 +156,14 @@
   line-height: 1.4;
 }
 
+.hero-title {
+  text-wrap: balance;
+}
+
+.hero-title span {
+  display: inline-block;
+}
+
 .hero-lead {
   color: var(--muted);
   margin-top: 12px;
@@ -475,6 +483,13 @@
   border-color: rgba(199, 139, 50, 0.4);
   background: #fffdf8;
   box-shadow: 0 18px 32px rgba(43, 36, 31, 0.18);
+  padding-top: 40px;
+}
+
+.pricing-card-primary .pricing-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
 }
 
 .pricing-card-primary::before {
@@ -623,12 +638,13 @@
 
 .faq-item.is-open .faq-answer {
   opacity: 1;
-  padding-bottom: 16px;
+  padding: 8px 16px 16px;
 }
 
 .faq-answer p {
   font-size: 13px;
   color: var(--muted);
+  margin: 0;
 }
 
 .faq-note {
