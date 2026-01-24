@@ -972,6 +972,22 @@
     padding: 56px 0 48px;
   }
 
+  .hero-info {
+    background: #ffffff;
+    border-color: var(--navy-600);
+    box-shadow: 0 12px 24px rgba(27, 38, 56, 0.12);
+  }
+
+  .hero-info-title {
+    color: var(--navy-700);
+    font-weight: 600;
+  }
+
+  .hero-info-text {
+    color: var(--navy-900);
+    font-size: 15px;
+  }
+
   .pricing-card {
     padding: 18px;
   }
