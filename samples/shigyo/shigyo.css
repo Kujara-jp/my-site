@@ -110,10 +110,11 @@
   width: 100%;
   padding: 10px 16px;
   border-radius: 999px;
-  background: var(--navy-900);
+  background: var(--accent);
   color: #fff;
   font-size: 13px;
   letter-spacing: 0.06em;
+  box-shadow: 0 10px 20px rgba(193, 138, 74, 0.25);
 }
 
 .shigyo-hero {
@@ -192,9 +193,20 @@
 }
 
 .btn-primary {
-  background: var(--navy-900);
+  background: var(--accent);
   color: #fff;
-  box-shadow: 0 10px 20px rgba(43, 36, 31, 0.2);
+  box-shadow: 0 10px 20px rgba(193, 138, 74, 0.25);
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background: #b77c3f;
+}
+
+.btn-primary:focus-visible,
+.nav-cta:focus-visible {
+  outline: 3px solid rgba(193, 138, 74, 0.35);
+  outline-offset: 2px;
 }
 
 .btn-secondary {
