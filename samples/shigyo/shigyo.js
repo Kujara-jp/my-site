@@ -53,6 +53,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const setFaqPanelHeight = (panel, isOpen, item) => {
+    if (!panel) {
+      return;
+    }
+
+    if (isOpen) {
+      panel.style.maxHeight = `${panel.scrollHeight}px`;
+      const onTransitionEnd = (event) => {
+        if (event.propertyName !== "max-height") {
+          return;
+        }
+        if (item?.classList.contains("is-open")) {
+          panel.style.maxHeight = "none";
+        }
+        panel.removeEventListener("transitionend", onTransitionEnd);
+      };
+      panel.addEventListener("transitionend", onTransitionEnd);
+      return;
+    }
+
+    if (panel.style.maxHeight === "none") {
+      panel.style.maxHeight = `${panel.scrollHeight}px`;
+      panel.offsetHeight;
+    }
+    panel.style.maxHeight = "0px";
+  };
+
   faqButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const item = button.closest(".faq-item");
@@ -67,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const panel = panelId ? document.getElementById(panelId) : null;
       if (panel) {
         panel.setAttribute("aria-hidden", String(!isOpen));
-        panel.style.maxHeight = isOpen ? `${panel.scrollHeight}px` : "0px";
+        setFaqPanelHeight(panel, isOpen, item);
       }
 
       const icon = button.querySelector(".faq-icon");
@@ -121,5 +148,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth >= 768) {
       setMenuState(false);
     }
+
+    document.querySelectorAll(".faq-item.is-open").forEach((item) => {
+      const panelId = item
+        .querySelector(".faq-question")
+        ?.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (panel) {
+        panel.style.maxHeight = "none";
+      }
+    });
   });
 });
