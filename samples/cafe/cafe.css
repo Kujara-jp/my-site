@@ -958,7 +958,6 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -1053,4 +1052,58 @@
     justify-self: end;
     align-self: start;
   }
+}
+
+@media (max-width: 768px) {
+  .nav-links.active .nav-cta {
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    text-align: left;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: inherit;
+  }
+}
+
+/* ロゴがaタグになっても見た目を維持 */
+.logo {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+.logo:hover {
+  text-decoration: none;
+}
+.logo:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+#top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Sticky header offset for in-page anchors */
+:root {
+  --header-offset: 84px; /* 実際のヘッダー高さに合わせて微調整 */
+}
+
+/* スクロール先の見出しがヘッダーに隠れないようにする */
+#hero,
+#about,
+#menu,
+#gallery,
+#access,
+#contact {
+  scroll-margin-top: var(--header-offset);
+}
+
+/* ロゴ（トップ移動）だけは“完全に一番上”にしたい */
+#hero {
+  scroll-margin-top: 0;
 }
