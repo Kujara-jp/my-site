@@ -1068,18 +1068,15 @@
   }
 }
 
-/* ロゴがaタグになっても見た目を維持 */
+/* Logo link: remove underline */
 .logo {
   text-decoration: none;
-  color: inherit;
-  display: inline-block;
 }
-.logo:hover {
+
+.logo:hover,
+.logo:visited,
+.logo:active {
   text-decoration: none;
-}
-.logo:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 4px;
 }
 
 #top {
