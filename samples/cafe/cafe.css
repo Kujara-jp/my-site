@@ -1104,3 +1104,19 @@
 #hero {
   scroll-margin-top: 0;
 }
+
+/* Portfolio sample badge (hero) */
+.sample-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+}
