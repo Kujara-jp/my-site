@@ -12,7 +12,10 @@
       rel="canonical"
       href="https://kujara-jp.github.io/my-site/samples/cafe/"
     />
-    <meta property="og:title" content="Cafe KUJARA | 自家焙煎カフェのポートフォリオ" />
+    <meta
+      property="og:title"
+      content="Cafe KUJARA | 自家焙煎カフェのポートフォリオ"
+    />
     <meta
       property="og:description"
       content="落ち着いた空間と季節のメニューを紹介するポートフォリオ。スマホでの閲覧体験を最優先に整えています。"
@@ -49,10 +52,12 @@
     <link rel="stylesheet" href="cafe.css" />
   </head>
   <body class="cafe-page">
+    <div id="top" aria-hidden="true"></div>
     <!-- ナビゲーション -->
     <nav class="navbar">
       <div class="container">
-        <div class="logo">Cafe KUJARA</div>
+        <!-- ロゴをトップへ -->
+        <a class="logo" href="#top" aria-label="ページトップへ">Cafe KUJARA</a>
         <button
           class="menu-toggle"
           id="menuToggle"
@@ -65,13 +70,15 @@
           <span></span>
           <span></span>
         </button>
+
         <ul class="nav-links" id="navLinks">
           <li><a href="#hero">ホーム</a></li>
           <li><a href="#about">カフェについて</a></li>
           <li><a href="#menu">メニュー</a></li>
-          <li class="nav-cta-item">
-            <a class="nav-cta" href="#contact" data-scroll-to="contact">予約</a>
-          </li>
+
+          <!-- 予約：通常リンクに統一（nav-cta / nav-cta-item を撤去） -->
+          <li><a href="#contact" data-scroll-to="contact">予約</a></li>
+
           <li><a href="#gallery">ギャラリー</a></li>
           <li><a href="#access">アクセス</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
@@ -881,6 +888,27 @@
         }
       })();
     </script>
+    <script>
+      (function () {
+        const topLink = document.querySelector('.logo[href="#top"]');
+        const navLinks = document.getElementById("navLinks");
+        const menuToggle = document.getElementById("menuToggle");
+
+        if (!topLink) return;
+
+        topLink.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // メニュー開いてたら閉じる（スマホ対策）
+          if (navLinks?.classList.contains("active")) {
+            navLinks.classList.remove("active");
+            menuToggle?.setAttribute("aria-expanded", "false");
+          }
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          history.replaceState(null, "", "#"); // URLの#top残したくなければ
+        });
+      })();
+    </script>
   </body>
 </html>
-
